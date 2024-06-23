@@ -1,0 +1,74 @@
+/*__________  K E Y F R A M E S  __________ */
+
+// fade in vers le haut
+.fadeIn {
+animation: fadeIn 1s;
+@keyframes fadeIn {
+  0% {
+  transform: translateY(400px);
+  opacity: 0;
+  }
+  100% {
+  transform: translateY(0);
+  opacity: 1;
+      }
+  }
+}
+
+  // fade in vers le bas
+@keyframes moveDown {
+  0% {
+  transform: translateY(-200px);
+  opacity: 0;
+  }
+  100% {
+  transform: translateY(0);
+  opacity: 1;
+  }
+}
+
+// Fade in placé sur les paragraphes 
+@keyframes fade-in-text {
+  0% {
+    transform: translateY(300);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+// Flottement du logo 
+@keyframes effetFlottement {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(20px, -25px); /* Mouvement latéral à droite et vers le haut */
+  }
+  50% {
+    transform: translate(0, -50px); /* Mouvement central vers le haut */
+  }
+  75% {
+    transform: translate(-20px, -25px); /* Mouvement latéral à gauche et vers le haut */
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+
+/*  __________  M I X I N   __________  */
+:root {
+  --timeSpeedRotate:27s;
+}
+
+@mixin speedRotate {
+animation: rotate 27s linear infinite;
+animation-duration: var(--timeSpeedRotate);
+transform-origin: center;
+  @keyframes rotate {
+      100% {
+          transform: rotate(360deg);
+      }
+  }
+}

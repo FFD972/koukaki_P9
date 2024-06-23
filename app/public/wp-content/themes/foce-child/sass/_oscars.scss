@@ -1,0 +1,44 @@
+@import 'variables';
+@import 'keyframes';
+
+/*___________  S E C T I O N  -  O S C A R S  __________ */
+
+/* Section dans > Templates-parts */
+.section-oscars {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 150px 0 100px;
+    animation: fadeIn $speed-fadeIn forwards; 
+  
+    &::before {
+        content: url("./assets/images/sunflower.png");
+        position: absolute;
+        line-height: 0;
+        left: 10em;
+        top: 5em;
+        @include speedRotate;
+    }
+      &::after {
+        content: url("./assets/images/orchid.png");
+        position: absolute;
+        line-height: 0;
+        right: -4.5em;
+        top: 1em;
+        @include speedRotate;
+      }
+}
+
+.oscars__logo {
+  margin-bottom: 65px;
+}
+
+@media screen and (max-width: 1030px) {
+  .oscars__logo {
+    margin: 0;
+  }
+}
+

@@ -1,0 +1,36 @@
+/*  __________  M E D I A  -  Q U E R I E S  __________  */
+
+// Banner : vidéo + parallaxe
+@media only screen and (max-width: 700px) {
+    .banner__video { 
+      display: none; 
+    }
+    .flottement { 
+      animation: none !important; 
+    }
+  }
+
+// Nuages 
+@media only screen and (max-width: 800px) {
+  .cloud_big {
+  display: none;
+  }
+  
+  .cloud_little {
+   display:
+    none;
+  }
+}
+
+//Fleurs SECTION Oscar  
+@media only screen and (max-width: 1200px) {
+    .section-oscars::before {
+        display: none;
+    }
+ }  
+ 
+@media only screen and (max-width: 600px) {
+    .section-oscars::after {
+        display: none;
+    }
+ }  

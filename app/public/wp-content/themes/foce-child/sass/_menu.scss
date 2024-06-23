@@ -1,0 +1,201 @@
+/** M E N U  **/
+ // Animation des "Line"
+.menu-toggle.activation span:nth-child(1) {
+    transform: rotate(45deg) translateY(9px);
+}
+
+.menu-toggle.activation span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.activation span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-9px);
+}
+
+.menu-toggle span {
+    transition: all 0.3s;
+}
+
+
+// Bouton Du Menu
+.menu-toggle {
+    display: block; 
+    max-height: 900px;
+    cursor: pointer;
+    flex-direction: column;
+    position: absolute;
+    right: 5em;
+    top: 1.8em;
+    gap: 2px;
+    z-index: 99;
+
+    &__line {
+        background-color: black;
+        text-decoration: none; 
+        display: block;
+        width: 40px;
+        height: 3px;
+        margin: 3px;
+    }
+}
+
+.site-title{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.menuOpen {
+    display: none;
+    position: relative;
+    text-align: center;
+    background: #FFF5E9; 
+    height: 900px;
+    overflow: hidden;
+ 
+    &.activation {
+        display: block;
+        animation: moveDown $speed-fadeIn;
+    }
+}
+
+.menu-listing {
+    width: 100%;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 15px;
+
+    a {
+        text-decoration: none;
+        text-align: center;
+        font-size: 45px;
+        padding: 20px 0;
+    }
+}
+
+
+ul li a:hover {
+    text-shadow: -1px -1px 3px rgb(243, 98, 14), 3px 3px 3px rgba(255, 92, 0, 0.3);
+}
+
+.logo-menu {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*  A N I M A T I O N et POSITION des FLEURS  */
+.menu-flowers {
+    position: relative;
+
+    img {
+    position: absolute;
+    animation: rotate 40s linear infinite;
+    }
+
+    &__orchid {
+        width: 9%;
+        bottom: 38em;
+        left: -4em;
+    }
+    &__sunflower {
+        width: 11%;
+        bottom: 38em;
+        right: 17em;
+    }
+    &__flower {
+        width: 5%;
+        bottom: 25em;
+        left: 16em;
+    }
+    &__random_flower {
+        width: 5%;
+        bottom: 28em;
+        right: -2em;
+    }
+    &__hibiscus_footer {
+        width: 35%;
+        bottom: -28em;
+        right: -18em;
+    }
+} 
+
+
+/* A N I M A T I O N et POSITION des CHATS */
+.menu-cats {
+    position: relative;
+
+    img {
+        width: 8%;
+        position: absolute;
+        animation: effetFlottement 10s 2s infinite linear;
+    }
+    &__kawaneko {
+        left: 22em;
+        bottom: 38em;
+    }
+    &__orenjiiro {
+        left: 5em;
+        bottom: 9em;
+    }
+    &__jaakuna {
+        right: 21em;
+        bottom: 18em;
+    }
+}
+
+/**___ Fin de Menu ___**/
+.menu-listing::after {
+    content: "STUDIO KOUKAKI";
+    display: block;
+    margin-top: 13em;
+    color: black; 
+    text-align: center;
+}
+
+
+
+/*__  M E D I A   Q U E R I E S  __*/
+
+@media screen and (max-width: 1050px) {
+    .menu-flowers__hibiscus_footer,
+    .menu-flowers__sunflower,
+    .menu-flowers__orchid,
+    .menu-cats__kawaneko,
+    .menu-cats__jaakuna {
+        display: none;
+    }
+}
+
+@media screen and (max-width:840px) {
+    .menu-flowers__flower, 
+    .menu-cats__orenjiiro,
+    .menu-flowers__random_flower {
+        display: none;
+    }
+    .menu-listing::after {
+        margin-top: 5em;
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+    .main-navigation {
+      flex-direction: column;
+      .site-title {
+        font-weight: inherit;
+        margin-bottom: 0;
+      }
+      .menu-toggle {
+        position: static;
+      }
+    }
+  }
+  
